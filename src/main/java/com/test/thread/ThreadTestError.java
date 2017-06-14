@@ -19,6 +19,8 @@ public class ThreadTestError{
         a.start();
         b.start();
 
+        System.out.println(" A ::: " + a.getName());
+        System.out.println(" B ::: " + b.getName());
         /**
          * 当没有a.join(); b.join(); 时，输出结构为0,
          * 线程执行顺序为 main、a、b
@@ -54,7 +56,7 @@ class ThreadError1 implements Runnable{
     private void add(){
         for ( int j=0 ; j<100 ; j++){
             count.i++;
-            System.out.println(count.i);
+            System.out.println(count.i + "    :::" + Thread.currentThread().getName());
         }
     }
 }
